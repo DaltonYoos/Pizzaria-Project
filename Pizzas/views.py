@@ -41,7 +41,7 @@ def comment(request, pizza_id):
 
             comment = form.save(commit=False)
             comment.pizza = pizza
-            comment.save()
+            comment = comment.save()
 
             return redirect('pizzas:pizza', pizza_id=pizza_id)           
 
