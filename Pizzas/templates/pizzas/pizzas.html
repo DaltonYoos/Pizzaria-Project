@@ -1,0 +1,28 @@
+{% extends "pizzas/base.html" %}
+
+{% block content %}
+
+<p> Welcome to Python Pizza Parlor!</p>
+
+<p> Select a Pizza:</p>
+
+<ul>
+
+    {% for pizza in all_pizzas %}
+
+    <li> 
+        <a href="{% url 'pizzas:pizza' pizza.id %}">{{ pizza }}</a> 
+    </li>
+
+
+    {% empty %}
+
+    <li> No pizzas available at this time. </li>
+
+    {% endfor %}
+
+
+
+</ul>
+
+{% endblock content %}
